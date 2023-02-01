@@ -22,6 +22,15 @@ def detail(request, id):
     return render(request, 'store/detail.html',{'product_object': product_object})
 
 def checkout(request):
+
+    if request.method == "POST":
+        name = request.POST.get('name', "")
+        email = request.POST.get('email', "")
+        addess = request.POST.get('address', "")
+        city = request.POST.get('city', "")
+        state = request.POST.get('state', "")
+        zipcode = request.POST.get('zipcode', "")
+       
     return render(request, 'store/checkout.html')
 
 
